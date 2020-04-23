@@ -42,7 +42,7 @@ La salida de cada uno de ellos fue:
 ![](images/AlgoritmoNormal/2.png)  
 En esta imagen se presentan las response de los casos, Hubo un caso en donde hubo un internal server error debido a la sobrecarga de operaciones porque para el mismo caso se estaban ejecutando el mismo algoritmo.  
 A continuacion evidenciamos la misma salida pero los tiempo resaltados:  
-![](images/AlgoritmoNormal/2.png)  
+![](images/AlgoritmoNormal/3.png)  
 Se vio un tiempo estimado de 3 minutos en cada ejecucion, totalmente variable, pero se llegó a la meta de calcular el numero 1000000 de la sucesion fibonacci, sin embargo se vio afectado el tiempo de ejecución para cumplirla.  
 Se puede concluir que a pesar de que el algoritmo es ineficiente para el proposito de la función, cumple con el objetivo en la mayoria de los casos pero con un costo alto de tiempo y de recursos que puede llevar a ocasionar una caida del sistema.
 
