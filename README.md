@@ -1,4 +1,4 @@
-### Escuela Colombiana de Ingeniería
+﻿### Escuela Colombiana de Ingeniería
 ### Arquitecturas de Software - ARSW
 
 ## Escalamiento en Azure con Maquinas Virtuales, Sacale Sets y Service Plans
@@ -35,9 +35,27 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 ![](images/part3/part3-test-function.png)
 
-5. Modifique la coleción de POSTMAN con NEWMAN de tal forma que pueda enviar 10 peticiones concurrentes. Verifique los resultados y presente un informe.
+5. Modifique la coleción de POSTMAN con NEWMAN de tal forma que pueda enviar 10 peticiones concurrentes. Verifique los resultados y presente un informe.  
+Se hicieron los request de la siguiente forma:  
+![](images/AlgoritmoNormal/1.png)  
+La salida de cada uno de ellos fue:  
+![](images/AlgoritmoNormal/2.png)  
+En esta imagen se presentan las response de los casos, Hubo un caso en donde hubo un internal server error debido a la sobrecarga de operaciones porque para el mismo caso se estaban ejecutando el mismo algoritmo.  
+A continuacion evidenciamos la misma salida pero los tiempo resaltados:  
+![](images/AlgoritmoNormal/2.png)  
+Se vio un tiempo estimado de 3 minutos en cada ejecucion, totalmente variable, pero se llegó a la meta de calcular el numero 1000000 de la sucesion fibonacci, sin embargo se vio afectado el tiempo de ejecución para cumplirla.  
+Se puede concluir que a pesar de que el algoritmo es ineficiente para el proposito de la función, cumple con el objetivo en la mayoria de los casos pero con un costo alto de tiempo y de recursos que puede llevar a ocasionar una caida del sistema.
 
-6. Cree una nueva Function que resuleva el problema de Fibonacci pero esta vez utilice un enfoque recursivo con memoization. Pruebe la función varias veces, después no haga nada por al menos 5 minutos. Pruebe la función de nuevo con los valores anteriores. ¿Cuál es el comportamiento?.
+6. Cree una nueva Function que resuleva el problema de Fibonacci pero esta vez utilice un enfoque recursivo con memoization. Pruebe la función varias veces, después no haga nada por al menos 5 minutos. Pruebe la función de nuevo con los valores anteriores. ¿Cuál es el comportamiento?.  
+![](images/AlgoritmoNuevo/1.png)  
+Se realizo un cambio al codigo, de manera que ahora el algoritmo se ejecuta de forma recursiva y las salidas se almacenan en una estructura de datos.  
+A continuación se presentan las salidas de las request, en este caso TODOS los casos dieron una respuesta OK 
+![](images/AlgoritmoNuevo/2.png)  
+Ahora en comparacion con los tiempos se vio un tiempo reducido entre las requests, pues cuando se ejecutaron algunas funciones ya el valor solicitado estaba en memoria.  
+![](images/AlgoritmoNuevo/3.png)  
+  
+Sin embargo, el uso de este algoritmo nos limitó en terminos de casos maximos a calcular. Pues si se probaba con 1M de casos, el tamaño del stack se excedía y el sistema no lo soportaba... por lo tanto mandaba error  
+Se puede hacer una comparativa en relacion a los tiempos de ejecucion y simularlo con el caso de 1M, como se mencionó anteriormente, algunas de las funciones se ejecutaban cuando ya habia una respuesta almacenada lo que provocaba una reducción de los tiempos y un gran ahorro de recursos.
 
 **Preguntas**
 
@@ -105,4 +123,3 @@ Es el intervalo de tiempo en el que un programa de computadora se ejecuta en un 
 
      * **Premium:** En este plan se factura en base a la CPU y la memoria que utiliza la function app.
 
-* **Informe**

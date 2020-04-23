@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"nth\":1000000\n}",
+					"raw": "{\n\t\"nth\":10000\n}",
 					"options": {
 						"raw": {
 							"language": "json"
